@@ -1,34 +1,61 @@
 # Data Tools Final
-*Diabetes risk prediction and health analytics*
 
-## Project Description
-This project addresses diabetes risk prediction by using patient data consisting of demographic details, clinical measurements, and lifestyle factors to build a sophisticated deep learning model. Utilizing a TabTransformer architecture, our approach will capture the complex, non-linear interactions among various features, facilitating early detection of diabetes risk. The model is designed to deliver predictions that are not only highly accurate but also interpretable, enabling healthcare providers to understand the key factors driving risk.
+## Diabetes Risk Prediction and Health Analytics
+
+### Project Description
+This project addresses diabetes risk prediction by using patient data consisting of demographic details, clinical measurements, and lifestyle factors to build an effective predictive model. Instead of assuming a complex architecture from the start, we will systematically evaluate different approaches, starting with traditional machine learning models before considering deep learning techniques.  
+
+Given that our data is tabular, we will focus on **Random Forests and Feed-Forward Neural Networks (FNNs)** as our primary modeling approaches, ensuring that we use a method that balances both performance and interpretability. The goal is to develop a solution that is both **accurate** and **transparent**, helping healthcare providers understand the key risk factors driving predictions.  
+
+---
 
 ## Goals
-- **Model Development:** Build and optimize a TabTransformer-based model that surpasses traditional methods in predictive performance, measured by metrics like accuracy, precision, recall, and ROC-AUC.
-- **Feature Interaction Analysis:** Implement advanced feature embeddings and attention mechanisms to identify and quantify the influence of individual risk factors.
-- **Interpretability:** Ensure the model's decisions are transparent by applying Shapley Addictive Explanations (SHAP), thus providing actionable insights for clinical decision-making.
-- **Visualization Tools:** Develop interactive dashboards for visualizing patient risk profiles and model outputs, aiding healthcare providers in understanding and utilizing the predictions effectively.
+
+- **Baseline Model Development:** Implement and compare traditional models such as **logistic regression, random forests, and feed-forward neural networks (FNNs)** to establish baseline performance.  
+- **Exploration of Model Effectiveness:** Determine whether more complex models provide meaningful benefits beyond traditional methods.  
+- **Feature Interaction Analysis:** Identify key contributing factors in diabetes risk prediction through **feature importance analysis** (e.g., SHAP, permutation-based explanations).  
+- **Interpretability and Transparency:** Ensure all models provide clear insights into their predictions so that medical professionals can make informed decisions.  
+- **Visualization Tools:** Develop interactive dashboards to help users explore patient risk profiles and understand model outputs effectively.  
+
+---
 
 ## Data Collection
-- **Source:** We plan to use the [Diabetes Prediction in America Dataset](https://www.kaggle.com/datasets/ashaychoudhary/diabetes-prediction-in-america-dataset) from Kaggle which consists of synthetically generated patient records (HIPAA-compliant) in order to build out an effective model. We may augment the data with other publically available diabetes datasets.
+
+- **Source:** We plan to use the [Diabetes Prediction in America Dataset](https://www.kaggle.com/datasets/ashaychoudhary/diabetes-prediction-in-america-dataset), a synthetically generated patient record dataset (HIPAA-compliant).  
+- **Data Augmentation:** We may integrate additional publicly available diabetes datasets to improve model generalization.  
+
+---
 
 ## Data Modeling
-We plan to start with Feature Extraction:
-- **Data Structuring:** First organize patient records into a structured format suitable for the model, ensuring a consistent set of features for each record.
-- **Enhanced Embeddings:** Develop feature embeddings that integrate the various demographic, clinical, and lifestyle data into a unified latent space, enabling the model to learn based on various non-linear features.
 
-Then the specifics of the model:
-- **Model Architecture:** Implement a TabTransformer architecture that utilizes self-attention mechanisms to capture relationships within the tabular data.
-- **Supervised Learning:** Train the model on the structured patient data to predict diabetes risk as a binary classification task.
+We will adopt a **progressive modeling strategy** that first establishes baseline performance before determining whether additional complexity is justified.  
+
+### Baseline Models
+
+- **Logistic Regression, Random Forests, and Feed-Forward Neural Networks (FNNs)** to establish initial benchmarks.  
+- Evaluate these models on key performance metrics to determine whether deep learning techniques provide a significant advantage.  
+
+### Feature Interaction & Interpretability
+
+- **Feature Importance Analysis:** Use **SHAP values, feature permutation importance, or correlation-based methods** to analyze what influences predictions.  
+- **Embedding Analysis:** If using deep learning, explore how the model organizes different patient risk profiles through **Principal Component Analysis (PCA)**.  
+
+---
 
 ## Data Visualization
-- **Embedding Space Analysis:** Use techniques like Principal Component Analysis (PCA) to visualize the various embeddings we created, also allowing us to identify the patterns related to various risk profiles.
-- **Model Interpretability:** Use tools like SHAP (SHapley Additive exPlanations) to visualize the impact individual features made on the model's predictions, promoting transparency of how the model makes decisions.
-- **Interactive Dashboards:** Develop interactive visualizations using platforms like Plotly to allow users to input various patient profiles and see the model outcomes.
+
+- **Model Interpretability:** Use SHAP values, feature importance scores, and permutation-based methods to provide insights into how the model makes decisions.  
+- **Embedding Space Analysis:** If using deep learning, apply PCA or t-SNE to visualize patient feature embeddings and risk patterns.  
+- **Interactive Dashboards:** Develop interactive visualizations using **Plotly or Dash**, allowing users to input patient attributes and observe the model’s predictions.  
+
+---
 
 ## Test Plan
-- Use a standard train/validate/test split in order to train the model, fine-tune hyper parameters, and evaluate the model without overfitting
-- **Evaluation metrics:**
-  - **Predictive Accuracy:** Evaluate how accurate predictions are with accuracy, precision, recall, and F1 score.
-  - **Classification Ability:** Calculate ROC-AUC score to determine how well the model is able to differentiate between patients with and without diabetes.
+
+- Use a **train/validate/test split** to train and fine-tune models while preventing overfitting.  
+- **Evaluation metrics:**  
+  - **Predictive Accuracy:** Compare performance across models.  
+  - **Precision, Recall, F1-Score:** Assess how well the model balances false positives and false negatives.  
+  - **ROC-AUC Score:** Evaluate classification ability, especially for probability-based models.  
+
+---
