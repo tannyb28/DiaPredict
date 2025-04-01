@@ -14,7 +14,7 @@ We identify target and features, and then proceed to define each column as eithe
 
 ### Data Modeling
 
-After preprocessing, we train a RandomForestClassifier, upon which we train and evaluate a classification report which contains precision, recall, F1-score, and accuracy metrics. Additionally, a confusion matrix and ROC AUC score is produced. Additionally we train another RandomForestClassifier using hyperparameter tuning. We use XGBoost and GridSearch with 5-fold cross-validation (cv=5) to avoid overfitting. This model tests different combinations of models and parameters and selects the "best" model based on validation score. 
+After preprocessing, we train a RandomForestClassifier, upon which we train and evaluate a classification report which contains precision, recall, F1-score, and accuracy metrics. Additionally, a confusion matrix and ROC AUC score is produced. We further train another RandomForestClassifier using hyperparameter tuning. We use XGBoost and GridSearch with 5-fold cross-validation (cv=5) to avoid overfitting. This model tests different combinations of models and parameters and selects the "best" model based on validation score. 
 
 ### Preliminary Results
 
