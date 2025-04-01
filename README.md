@@ -1,8 +1,13 @@
 ## Diabetes Risk Prediction and Health Analytics
 
+## Midterm Report
+https://www.youtube.com/watch?v=aAQgYyCeqvY
+
 ### Summary
 
 This project aims to build a predictive system for diabetes risk using traditional and deep learning models. We use structured patient data to train and evaluate models such as Logistic Regression and Random Forests, and plan to use Feed-Forward Neural Networks (FNNs). We assess their performance based on accuracy and interpretability to determine the most effective and trustworthy approach. The work here establishes a baseline for transparent and clinically useful machine learning in diabetes diagnostics.
+
+
 
 ### Dataset
 
