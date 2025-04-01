@@ -27,10 +27,14 @@ ROC-AUC scores are currently low, suggesting further tuning or feature engineeri
 
 ### Visualization
 
+Shows how BMI values are distributed
 ![Shows how BMI values are distributed](assets/BMIDist.png)
 
+Shows glucose levels for diabetic vs. non-diabetic patients
 ![Shows glucose levels for diabetic vs. non-diabetic patients](assets/GlucoseDiag.png)
 
+Shows how strongly numerical features are related
 ![Shows how strongly numerical features are related](assets/NumFeatCorrelation.png)
 
-
+Feature Importance tells us how much each feature was used for the decision making of the random forest classifier. The higher the importance, the more the feature will make splits in decision trees. An analysis of feature importance may help us train a model with higher accuracy. 
+![Feature Importance](assets/FeatureImportance.png)
