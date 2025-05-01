@@ -56,9 +56,9 @@ Random Forest performed best in terms of accuracy and generalization. Feature im
 
 ## How to Reproduce
 > [WIP]: Makefile to install dependencies according to a requirements.txt (need info on python/dependency versions)
-> Testing:
-    Run pip install pytest in project directory
-    Run python -m pytest -q
+Testing:
+- Run pip install pytest in project directory
+- Run python -m pytest -q
 
 ## Future Work and Limitations
 - Improve hyperparameter tuning and cross-validation
