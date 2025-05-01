@@ -1,45 +1,68 @@
-## Diabetes Risk Prediction and Health Analytics
+# DiaPredict: Predicting Diabetes Risk from Health Indicators
 
-## Midterm Report
-https://www.youtube.com/watch?v=aAQgYyCeqvY
+## Project Summary
+DiaPredict is a machine learning project developed as part of a Data Science Tools and Applications course. The objective is to predict the likelihood of diabetes in individuals based on a set of health indicators from survey data. The project covers the full data science lifecycle including data collection, preprocessing, visualization, feature engineering, and model training/evaluation.
 
-### Summary
+## Dataset Overview
+We initially worked with an older dataset for the midterm phase of the project. For the final report, we switched to a newer and more comprehensive dataset: `diabetes_binary_health_indicators_BRFSS2015.csv`. This dataset was sourced from the Behavioral Risk Factor Surveillance System (BRFSS) and includes numerous binary and categorical health indicators for diabetes prediction.
 
-This project aims to build a predictive system for diabetes risk using traditional and deep learning models. We use structured patient data to train and evaluate models such as Logistic Regression and Random Forests, and plan to use Feed-Forward Neural Networks (FNNs). We assess their performance based on accuracy and interpretability to determine the most effective and trustworthy approach. The work here establishes a baseline for transparent and clinically useful machine learning in diabetes diagnostics.
+The change was motivated by the availability of more balanced and richer features in the updated dataset, improving the reliability of our models.
 
+## Project Goals
+- Build a predictive model to estimate the risk of diabetes based on health-related survey data.
+- Explore which health indicators are most predictive of diabetes.
+- Practice end-to-end data science workflows and tools in a reproducible environment.
 
+## Data Collection
+The dataset is publicly available and was obtained in CSV format. It includes over 250,000 records and dozens of features related to demographics, physical activity, BMI, smoking, alcohol consumption, and more.
 
-### Dataset
+## Data Cleaning and Preprocessing
+- Handled missing values and type conversions.
+- Applied one-hot encoding to categorical features as needed.
+- Investigated multicollinearity using Variance Inflation Factor (VIF).
+- Performed feature selection using statistical methods such as chi-squared and ANOVA (f_classif).
 
-We use the [Diabetes Prediction in America Dataset](https://www.kaggle.com/datasets/ashaychoudhary/diabetes-prediction-in-america-dataset), a synthetically generated patient record dataset (HIPAA-compliant).  
+## Exploratory Data Analysis (EDA)
+We performed a detailed exploratory data analysis to understand distributions, correlations, and feature importance:
 
-### Data Preprocessing
+- **Pandas Profiling** provided a quick summary of data statistics.
+- **Correlation matrix** and pairwise plots highlighted feature relationships.
 
-We identify target and features, and then proceed to define each column as either numerical or categorical. We then split the data, transforming numerical data using StandardScaler and categorical data using OneHotEncoder. 
+Key Visualizations:
+- ![RF Feature Importances](assets/rf_feature_importances.png)
+- ![Learning curve](assets/learning_curve.png)
+- ![ROC Curve](assets/roc_curve.png)
+- ![PCA Graph](assets/pca_train.png)
 
-### Data Modeling
+## Feature Engineering
+We used statistical feature selection techniques including:
+- SelectKBest with `chi2` and `f_classif` scores
+- PCA for dimensionality reduction and visualization
 
-After preprocessing, we train a RandomForestClassifier, upon which we train and evaluate a classification report which contains precision, recall, F1-score, and accuracy metrics. Additionally, a confusion matrix and ROC AUC score is produced. We further train another RandomForestClassifier using hyperparameter tuning. We use XGBoost and GridSearch with 5-fold cross-validation (cv=5) to avoid overfitting. This model tests different combinations of models and parameters and selects the "best" model based on validation score. 
+## Modeling
+We trained and evaluated several classification models:
+- Logistic Regression
+- K-Nearest Neighbors (KNN)
+- Decision Tree Classifier
+- Random Forest Classifier (with hyperparameter tuning via GridSearchCV)
+- XGBoost Classifier
 
-### Preliminary Results
+Evaluation metrics:
+- Accuracy
+- Confusion Matrix
+- Classification Report (Precision, Recall, F1-score)
+- ROC Curve and AUC
 
-| Model                                         | Accuracy | ROC-AUC |
-|-----------------------------------------------|----------|---------|
-| Random Forest                                 | 0.50     | 0.5019  |
-| Random Forest using hyperparameter tuning     | 0.50     | 0.4961  |
+## Results Summary
+Random Forest and XGBoost performed best in terms of accuracy and generalization. Feature importance plots indicated that BMI, age, and physical activity were among the top predictive variables.
 
-ROC-AUC scores are currently low, suggesting further tuning or feature engineering is necessary. 
+## How to Reproduce
+> Note: A Makefile and GitHub Actions test workflow will be added to automate setup and testing.
 
-### Visualization
+## Future Work and Limitations
+- Improve hyperparameter tuning and cross-validation
+- Implement more interactive visualizations using Plotly or Dash
+- Further balance the dataset or experiment with resampling methods like SMOTE
 
-Shows how BMI values are distributed
-![Shows how BMI values are distributed](assets/BMIDist.png)
-
-Shows glucose levels for diabetic vs. non-diabetic patients
-![Shows glucose levels for diabetic vs. non-diabetic patients](assets/GlucoseDiag.png)
-
-Shows how strongly numerical features are related
-![Shows how strongly numerical features are related](assets/NumFeatCorrelation.png)
-
-Feature Importance tells us how much each feature was used for the decision making of the random forest classifier. The higher the importance, the more the feature will make splits in decision trees. An analysis of feature importance may help us train a model with higher accuracy. 
-![Feature Importance](assets/FeatureImportance.png)
+## Video Presentation
+*Link to YouTube presentation will be added here once available.*
