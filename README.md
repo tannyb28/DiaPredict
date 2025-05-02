@@ -58,7 +58,7 @@ Random Forest performed best in terms of accuracy and generalization. Feature im
 - Make sure Python version is 3.12 or earlier
 - Run pip install -r requirements.txt to install dependencies with appropriate versions
 - Run each cell in notebook sequentially
-For Testing:
+### For Testing:
 - Run pip install pytest in project directory
 - Run python -m pytest -q
 
