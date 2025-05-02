@@ -55,8 +55,10 @@ Evaluation metrics:
 Random Forest performed best in terms of accuracy and generalization. Feature importance plots indicated that physical health, general health, and mental health were the most predictive variables, followed by income, BMI, and difficulty walking.
 
 ## How to Reproduce
-> [WIP]: Makefile to install dependencies according to a requirements.txt (need info on python/dependency versions)
-Testing:
+- Make sure Python version is 3.12 or earlier
+- Run pip install -r requirements.txt to install dependencies with appropriate versions
+- Run each cell in notebook sequentially
+For Testing:
 - Run pip install pytest in project directory
 - Run python -m pytest -q
 
