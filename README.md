@@ -68,4 +68,4 @@ Random Forest performed best in terms of accuracy and generalization. Feature im
 - Further balance the dataset or experiment with resampling methods like SMOTE
 
 ## Video Presentation
-*Link to YouTube presentation will be added here once available.*
+[*Video Presentation*](https://youtu.be/ClQDCfXOUcg)
