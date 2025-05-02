@@ -62,6 +62,8 @@ Random Forest performed best in terms of accuracy and generalization. Feature im
 - Run pip install pytest in project directory
 - Run python -m pytest -q
 
+Our testing samples function calls for data processing, splitting our test set, and fitting with a pipeline in order to ensure our data modeling logic is sound. We run these tests on a tiny dummy sample dataset relative to our main dataset. Upon running the above commands, 3 tests should be passed. 
+
 ## Future Work and Limitations
 - Improve hyperparameter tuning and cross-validation
 - Implement more interactive visualizations using Plotly or Dash
